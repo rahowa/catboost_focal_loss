@@ -25,7 +25,7 @@ class FocalLossObjective(object):
 
             if targets[index] > 0.0:
                 der1 = -((1-p)**(gamma-1))*(gamma * math.log(p) * p + p - 1)/p
-                der2 = -gamma*((1-p)**gamma)*((gamma*p-1)*math.log(p)+2*(p-1))
+                der2 = gamma*((1-p)**gamma)*((gamma*p-1)*math.log(p)+2*(p-1))
             else:
                 der1 = (p**(gamma-1)) * (gamma * math.log(1 - p) - p)/(1 - p)
                 der2 = p**(gamma-2)*((p*(2*gamma*(p-1)-p))/(p-1)**2 + (gamma-1)*gamma*math.log(1 - p))
